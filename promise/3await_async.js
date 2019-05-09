@@ -25,12 +25,12 @@ async function start () {
     let folders = await dirs;
     let fullPaths = [];
 
-    folders.map(async (dir) => {
+    folders.map((dir) => {
       let subPath = path.join(basePath, dir.name || dir);
       fullPaths.push(subPath);
     });
 
-    folders.map(async (dir) => {
+    fullPaths.map(async (dir) => {
 
       try {
         let subPath = await isDir(dir.name || dir);
